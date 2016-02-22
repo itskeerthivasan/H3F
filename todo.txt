@@ -9,3 +9,5 @@ database tables
 	departments
 
 	faculty profile
+
+	papers
