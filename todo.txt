@@ -1,0 +1,9 @@
+
+database tables
+	states 
+
+	universities
+
+	schools/colleges
+
+	departments
