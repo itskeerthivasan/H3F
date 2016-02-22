@@ -12,7 +12,29 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $states =  App\State::all();
+
+   
+
+		foreach ($states as $state) {
+			 foreach ($state->Universities as $University) {
+			 	foreach ($University->schools as $school) {
+					foreach ($school->departments as $department) {
+			 		$department->faculties;
+			 		}
+			 	}
+
+			 	foreach ($University->colleges as $college) {
+			 		foreach ($college->departments as $department) {
+			 		$department->faculties;
+			 		}
+			 	}
+			 	
+			 }
+		}
+    
+	return $states;
+    
 });
 
 /*
