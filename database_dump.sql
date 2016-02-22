@@ -21,6 +21,31 @@ SET time_zone = "+00:00";
 --
 
 --
+-- Dumping data for table `states`
+--
+
+INSERT INTO `states` (`id`, `slug`, `name`, `created_at`, `updated_at`) VALUES
+(1, 'pondicherry', 'pondicherry', NULL, NULL),
+(2, 'tamilnadu', 'Tamil Nadu', NULL, NULL);
+
+--
+-- Dumping data for table `universities`
+--
+
+INSERT INTO `universities` (`id`, `state_id`, `slug`, `name`, `created_at`, `updated_at`) VALUES
+(1, 1, 'pondicherry-university', 'Pondicherry University', NULL, NULL),
+(2, 2, 'madras-university', 'Madras University', NULL, NULL);
+
+
+--
+-- Dumping data for table `schools`
+--
+
+INSERT INTO `schools` (`id`, `university_id`, `slug`, `name`, `created_at`, `updated_at`) VALUES
+(1, 1, 'som', 'School of Management', NULL, NULL),
+(2, 1, 'soe', 'School of Engineering and Technology', NULL, NULL);
+
+--
 -- Dumping data for table `colleges`
 --
 
@@ -60,29 +85,6 @@ INSERT INTO `papers` (`id`, `faculty_id`, `slug`, `name`, `created_at`, `updated
 (4, 4, 'paper4', 'paper4', NULL, NULL),
 (5, 5, 'paper5', 'paper5', NULL, NULL);
 
---
--- Dumping data for table `schools`
---
-
-INSERT INTO `schools` (`id`, `university_id`, `slug`, `name`, `created_at`, `updated_at`) VALUES
-(1, 1, 'som', 'School of Management', NULL, NULL),
-(2, 1, 'soe', 'School of Engineering and Technology', NULL, NULL);
-
---
--- Dumping data for table `states`
---
-
-INSERT INTO `states` (`id`, `slug`, `name`, `created_at`, `updated_at`) VALUES
-(1, 'pondicherry', 'pondicherry', NULL, NULL),
-(2, 'tamilnadu', 'Tamil Nadu', NULL, NULL);
-
---
--- Dumping data for table `universities`
---
-
-INSERT INTO `universities` (`id`, `state_id`, `slug`, `name`, `created_at`, `updated_at`) VALUES
-(1, 1, 'pondicherry-university', 'Pondicherry University', NULL, NULL),
-(2, 2, 'madras-university', 'Madras University', NULL, NULL);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
