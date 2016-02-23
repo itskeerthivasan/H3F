@@ -10,7 +10,7 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
+Route::group(['middleware' => ['api']], function () {
 Route::get('/', function () {
     $states =  App\State::all();
 
@@ -18,17 +18,23 @@ Route::get('/', function () {
 
 		foreach ($states as $state) {
 			 foreach ($state->Universities as $University) {
+
 			 	foreach ($University->schools as $school) {
 					foreach ($school->departments as $department) {
-			 		$department->faculties;
+				 		foreach ($department->faculties as $faculty) {
+				 			$faculty->papers;
+				 		}				
 			 		}
 			 	}
 
 			 	foreach ($University->colleges as $college) {
 			 		foreach ($college->departments as $department) {
-			 		$department->faculties;
+				 		foreach ($department->faculties as $faculty) {
+				 			$faculty->papers;
+				 		}
 			 		}
 			 	}
+
 			 	
 			 }
 		}
@@ -48,6 +54,6 @@ Route::get('/', function () {
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
+
     //
 });
