@@ -12,34 +12,8 @@
 */
 Route::group(['middleware' => ['api']], function () {
 Route::get('/', function () {
-    $states =  App\State::all();
-
-   
-
-		foreach ($states as $state) {
-			 foreach ($state->Universities as $University) {
-
-			 	foreach ($University->schools as $school) {
-					foreach ($school->departments as $department) {
-				 		foreach ($department->faculties as $faculty) {
-				 			$faculty->papers;
-				 		}				
-			 		}
-			 	}
-
-			 	foreach ($University->colleges as $college) {
-			 		foreach ($college->departments as $department) {
-				 		foreach ($department->faculties as $faculty) {
-				 			$faculty->papers;
-				 		}
-			 		}
-			 	}
-
-			 	
-			 }
-		}
-    
-	return $states;
+	
+     return  $Faculty = App\Faculty::with('department.departmentof.university')->get();
     
 });
 
