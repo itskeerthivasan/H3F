@@ -1,33 +1,23 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Routes File
-|--------------------------------------------------------------------------
-|
-| Here is where you will register all of the routes in an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
-*/
 Route::group(['middleware' => ['api']], function () {
-Route::get('/', function () {
-	
-     return  $Faculty = App\Faculty::with('department.departmentof.university')->get();
-    
-});
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| This route group applies the "web" middleware group to every route
-| it contains. The "web" middleware group is defined in your HTTP
-| kernel and includes session state, CSRF protection, and more.
-|
-*/
+/**
+     * University API Resource
+     */
+	Route::resource('/state', 'StateController',['only' => ['index', 'show']]);
+	Route::resource('/state.university', 'UniversityController',['only' => ['index', 'show']]);
+
+	Route::resource('/state.university.college', 'CollegeController',['only' => ['index', 'show']]);
+	Route::resource('/state.university.college.department', 'DepartmentController',['only' => ['index', 'show']]);
+	Route::resource('/state.university.college.department.faculty', 'FacultyController',['only' => ['index', 'show']]);
 
 
-    //
+	Route::resource('/state.university.school', 'SchoolController',['only' => ['index', 'show']]);
+	Route::resource('/state.university.school.department', 'DepartmentController',['only' => ['index', 'show']]);
+	Route::resource('/state.university.school.department.faculty', 'FacultyController',['only' => ['index', 'show']]);
+
+
+
+
 });

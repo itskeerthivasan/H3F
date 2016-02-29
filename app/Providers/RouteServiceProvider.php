@@ -27,6 +27,16 @@ class RouteServiceProvider extends ServiceProvider
         //
 
         parent::boot($router);
+
+        \Route::bind('college',function($college){
+            return \App\College::where('id',$college)->FirstOrFail();
+
+        });
+
+        \Route::bind('school',function($school){
+            return \App\School::where('id',$school)->FirstOrFail();
+
+        });
     }
 
     /**
